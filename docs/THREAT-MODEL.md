@@ -1,6 +1,6 @@
 # Threat model and integration boundaries
 
-Version: 0.1.0. All demonstrations and tests use synthetic inputs.
+Version: 0.1.1. All demonstrations and tests use synthetic inputs.
 
 ## Assets and trust boundaries
 
@@ -12,7 +12,7 @@ An application supplies a verified session and trusted database metadata to the 
 
 | Threat | Implemented control | Evidence | Application work still required |
 | --- | --- | --- | --- |
-| Shared/browser caches reuse a member response | Private default, browser/CDN/shared `no-store`, removed validators, `Vary` | HTTP tests; synthetic endpoint tests | Purge old copies, audit CDN rules and explicit service-worker/Cache API writes |
+| Shared/browser caches reuse a member response | Private default, browser/CDN/shared and Cloudflare/Vercel targeted `no-store`, removed validators, `Vary` | HTTP tests; documented origin-header precedence regressions; synthetic endpoint tests | Execute at the origin before caching; purge old copies, audit CDN rules and explicit service-worker/Cache API writes |
 | Another account requests a document by ID | Verified-subject, owner/exact-grant checks and default 404 denial | Authorization and endpoint tests prove denial before storage read | Secure session verification, trusted metadata loading and all storage/signing paths |
 | Cross-tenant access, stale grants or display-role spoofing | Same tenant, exact resource/action, expiration, no implicit admin privilege | Negative authorization tests | Correct grant issuance/revocation and current database state |
 | A hostile site submits a browser write | Exact configured Origin, request URL and Fetch Metadata checks | Mutation tests with missing/null/hostile origins | Authentication, per-write authorization, HTTPS, cookie policy and dedicated service-client authentication |

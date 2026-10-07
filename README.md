@@ -6,7 +6,9 @@ The first release addresses four concrete boundaries: private-response caching, 
 
 ## Status and installation
 
-Version 0.1.0 is an initial implementation. An external audit, production integration and independent downstream adoption have not been established. The package is not published to npm. Registry download counts are therefore unavailable.
+Version 0.1.1 corrects targeted CDN cache-header precedence in the initial implementation. An external audit, production integration and independent downstream adoption have not been established. The package is not published to npm. Registry download counts are therefore unavailable.
+
+See the [0.1.1 security change](docs/SECURITY-CHANGE-0.1.1.md) for the affected boundary, synthetic reproduction and upgrade guidance.
 
 After a public source commit has been published, install from its full reviewed commit SHA:
 

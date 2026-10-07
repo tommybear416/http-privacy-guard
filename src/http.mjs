@@ -51,6 +51,8 @@ export function preventPrivateCaching(input) {
   const headers = new Headers(input);
   headers.set('Cache-Control', 'private, no-store');
   headers.set('CDN-Cache-Control', 'no-store');
+  headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
+  headers.set('Vercel-CDN-Cache-Control', 'no-store');
   headers.set('Surrogate-Control', 'no-store');
   headers.set('Pragma', 'no-cache');
   headers.set('Expires', '0');
