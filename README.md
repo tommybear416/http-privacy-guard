@@ -8,7 +8,7 @@ The first release addresses four concrete boundaries: private-response caching, 
 
 Version 0.1.1 corrects targeted CDN cache-header precedence in the initial implementation. An external audit, production integration and independent downstream adoption have not been established. The package is not published to npm. Registry download counts are therefore unavailable.
 
-See the [0.1.1 security change](docs/SECURITY-CHANGE-0.1.1.md) for the affected boundary, synthetic reproduction and upgrade guidance.
+See the [0.1.1 security change](docs/SECURITY-CHANGE-0.1.1.md) for the affected boundary, synthetic reproduction and upgrade guidance. The published [security advisory](https://github.com/tommybear416/http-privacy-guard/security/advisories/GHSA-mjww-fjrv-p72m) records the AI-assisted review, owner-coordinated remediation and released fix.
 
 After a public source commit has been published, install from its full reviewed commit SHA:
 
@@ -70,6 +70,6 @@ This project does not certify HIPAA, PIPEDA, PHIPA or other legal compliance, an
 - [Maintainer responsibilities](MAINTAINERS.md)
 - [Security reporting and support](SECURITY.md)
 - [Contribution and release process](CONTRIBUTING.md)
-- [Adoption evidence](docs/ADOPTION.md)
+- [Security work and application evidence](docs/ADOPTION.md)
 
 The project is licensed under [MIT](LICENSE). Recipients may use, copy and modify this component under that license. The license grants no rights to a separate private application or its data.

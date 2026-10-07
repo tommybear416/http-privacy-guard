@@ -1,41 +1,47 @@
-# Adoption and application evidence
+# Security work and application evidence
 
-Evidence reviewed on 2026-10-07.
+Evidence reviewed on 2026-10-07. This page records the project owner's actual work and the limits of the available evidence. It does not certify eligibility for an external access program.
 
-## Published maintenance evidence
+## Published evidence
 
 | Item | Public evidence | What it establishes |
 | --- | --- | --- |
+| Name, account and role | [MAINTAINERS.md](../MAINTAINERS.md) | Owner-authorized association of Yitong Chen with tommybear416 and the security-maintainer responsibilities |
 | Open-source project | [HTTP Privacy Guard](https://github.com/tommybear416/http-privacy-guard) | Public MIT-licensed source |
-| Security-maintainer role | [MAINTAINERS.md](../MAINTAINERS.md) | tommybear416's responsibilities for policy, triage, regressions and release review |
+| Security advisory | [GHSA-mjww-fjrv-p72m](https://github.com/tommybear416/http-privacy-guard/security/advisories/GHSA-mjww-fjrv-p72m) | A published advisory for a real defect in this project; the owner is credited as coordinator and AI assistance is disclosed |
+| Released fix | [0.1.1 source release](https://github.com/tommybear416/http-privacy-guard/releases/tag/v0.1.1) | Released correction at source commit 6556b78de2133286e981b4e22feb6325da2f1538 |
+| Reproduction and patch | [Security change](SECURITY-CHANGE-0.1.1.md) and [patch commit](https://github.com/tommybear416/http-privacy-guard/commit/6556b78de2133286e981b4e22feb6325da2f1538) | Six private-boundary regression cases fail before the fix and pass after it; two public controls retain intended behavior |
+| Fix verification | [Node.js 22/24 checks at the released source](https://github.com/tommybear416/http-privacy-guard/actions/runs/37644776353) | 42 synthetic tests per runtime, source scanning and the 15-file package boundary |
 | Reporting channel | [Security policy](https://github.com/tommybear416/http-privacy-guard/security/policy) | Private vulnerability reporting is enabled |
-| Technical checks | [Security checks for source commit bbf09d1](https://github.com/tommybear416/http-privacy-guard/actions/runs/37640299701) | Node.js 22/24 synthetic checks; 34 tests per runtime |
-| Identity | Applicant-supplied public identity-to-handle link pending | The account's role alone does not establish a verified legal identity |
 
-The implemented boundaries are private-response caching, browser write origins, account/tenant resource authorization and a bounded offline artifact scanner. See the [threat model](THREAT-MODEL.md) for control-specific evidence and integration requirements. No external audit or production security certification has been established.
+The 0.1.0 defect preserved cache-enabled provider-specific CDN headers while applying generic private caching restrictions. Version 0.1.1 replaces the Cloudflare- and Vercel-specific policies with `no-store` at private boundaries. Cache exposure is conditional on origin placement, cache eligibility and platform rules. The contradictory response headers were reproduced offline; no live CDN exploit, observed data leak or affected production consumer has been established.
+
+The implemented controls are private-response caching, browser write origins, account/tenant resource authorization and a bounded offline artifact scanner. See the [threat model](THREAT-MODEL.md) for integration requirements. No external audit or production security certification has been established.
+
+## Relationship to the owner's member/document platform
+
+The owner also operates the UTSTA member/document platform. This independent component was created for privacy controls relevant to that platform, including private-document access and planned protection of health-related records. Security review uses source code and synthetic examples rather than member records.
+
+This relationship describes ownership and defensive purpose. The component has not been verified as integrated into the deployed platform. No website release or traffic change is part of this evidence publication, and this relationship is not an independent adoption metric. The private application source, configuration and member data are outside this public repository.
+
+## Individual application route
+
+The supplied Verification Portal form offers an accepted vulnerability disclosure or an advisory published under the applicant's name as one evidence option. The published advisory above is a candidate for the advisory branch, with the owner-published name/account link and released fix as supporting evidence. The provider decides whether a self-owned project's AI-assisted advisory is sufficient.
+
+The GHSA coordinator credit is an attribution, not independent acceptance of a vulnerability report or an external qualification. There is no assigned CVE and no independently accepted third-party report or verified bug-bounty track record in this evidence package. Do not select those credentials on that basis.
+
+The [official application guidance](https://support.claude.com/en/articles/14604842-cyber-verification-program) describes individual Defense Access and provider review. Account and [security requirements](https://support.claude.com/en/articles/17202708-cyber-verification-program-security-requirements) must be confirmed by the applicant. Publishing an advisory does not guarantee approval.
 
 ## Adoption metrics
 
-No independent downstream adopter has been verified. No npm publication or monthly registry download count, Debian/Fedora/Homebrew core inclusion, or ecosyste.ms critical flag has been established. There is currently no qualifying adoption-figure link to supply.
+No independent downstream adopter has been verified. No npm publication or monthly registry download count, Debian/Fedora/Homebrew core inclusion, or ecosyste.ms critical flag has been established. There is currently no qualifying adoption-figure link to supply for the separate open-source-maintainer credential.
 
-The component is intended for private-document applications. Intended integration, an unmerged candidate, an owner-controlled example or documentation describing a downstream relationship does not prove production adoption or independent ecosystem use. A separate private application's production deployment is outside the current publication scope.
-
-Record an adopter only with its consent and evidence such as a public dependency manifest pinned to a release/source commit and a real integration that executes the control. Do not publish a private consumer's name, repository, architecture or usage data without authorization.
-
-GitHub's [dependency-graph guidance](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/explore-dependencies) explains the public-repository dependents view. Private consumers and source-archive installations may not provide a public recognized-dependent count. Stars, forks, page views, CI runs and this repository's own tests are not the application form's adoption metrics.
-
-## Individual application requirements
-
-The Verification Portal form supplied by the maintainer asks an individual to document at least one security credential: credited vulnerability work, an accepted disclosure/advisory, verifiable bug-bounty standing, or a named security-maintainer role on an open-source project used by others. A description of intended defensive work does not replace that credential.
-
-The project and role URLs above are available. The open-source maintainer credential still lacks verifiable adoption evidence and an applicant-provided identity link. No numeric adoption minimum appears in the supplied form or the public guidance reviewed on the date above; only the provider can determine whether particular evidence qualifies. Creating a repository or integrating one's own application does not guarantee approval.
-
-The [official program announcement](https://www.anthropic.com/news/cyber-verification-program) and [application guidance](https://support.claude.com/en/articles/14604842-cyber-verification-program) describe Defense Access and provider verification. This repository makes no claim that the maintainer has been approved or that the current evidence satisfies a credential category.
+Intended integration, an unmerged candidate, an owner-controlled example, documentation or CI does not prove production adoption or independent ecosystem use. Record an adopter only with its consent and a real integration plus verifiable dependency evidence. Stars, forks and newly created examples are not the supplied form's adoption metrics. No numeric adoption minimum appears in the supplied form or the public guidance reviewed; only the provider can determine whether particular evidence qualifies.
 
 ## Defensive work description
 
-The applicant may use the following three-sentence draft if it matches their actual responsibilities:
+The applicant may use this three-sentence draft if it matches the intended scope:
 
-> I maintain the public http-privacy-guard component and am responsible for its security policy, vulnerability triage, regression checks, and release review. My defensive work covers this component and my own private member/document platform, focusing on private-response caching, browser-origin checks, and account/tenant access to private documents. I request Defense Access to assess these systems, reproduce potential vulnerabilities with synthetic data, and develop fixes.
+> I am Yitong Chen (GitHub: tommybear416), the owner and security maintainer of HTTP Privacy Guard, and I coordinate vulnerability reproduction, remediation and disclosure with AI assistance. My defensive scope covers this component and the UTSTA member/document systems I operate, focusing on private-response caching, browser-origin checks and account/tenant access controls for sensitive records, including planned health-related data. I request Defense Access to assess these authorized systems, reproduce issues using synthetic data and develop fixes.
 
-This draft does not claim that the component has been deployed in the private platform. The applicant supplies their verified identity, confirms account requirements and submits their own application.
+This scope does not claim that the component is already deployed in the private platform. The applicant completes identity verification, confirms account/security requirements and submits the application personally.
