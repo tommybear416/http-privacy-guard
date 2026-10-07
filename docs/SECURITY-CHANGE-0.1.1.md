@@ -20,6 +20,10 @@ Eight regression cases cover the two providers at three private entry points plu
 
 The source review, synthetic reproduction and remediation were prepared with AI assistance at the project owner's request. GitHub account [tommybear416](https://github.com/tommybear416) coordinates maintenance and disclosure. This record does not establish a verified legal identity, third-party acceptance, CVE assignment or access-program eligibility.
 
+## Reproducible evidence
+
+The [offline verification guide](VERIFICATION.md) and 0.1.1 release attachments provide the exact before/after HTTP sources, hashes, verifier and results. The verifier requires no network or member records. The cookie regression establishes the library's forced-private behavior; it does not establish that a real CDN caches that response. See [MAINTAINERS](../MAINTAINERS.md) for the owner-authorized Yitong Chen / tommybear416 name and role association.
+
 ## References
 
 - [Cloudflare origin header precedence](https://developers.cloudflare.com/cache/concepts/cdn-cache-control/)

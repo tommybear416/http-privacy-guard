@@ -71,5 +71,6 @@ This project does not certify HIPAA, PIPEDA, PHIPA or other legal compliance, an
 - [Security reporting and support](SECURITY.md)
 - [Contribution and release process](CONTRIBUTING.md)
 - [Security work and application evidence](docs/ADOPTION.md)
+- [Offline reproduction, downloadable evidence and maintenance record](docs/VERIFICATION.md)
 
 The project is licensed under [MIT](LICENSE). Recipients may use, copy and modify this component under that license. The license grants no rights to a separate private application or its data.

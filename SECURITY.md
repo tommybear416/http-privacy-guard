@@ -2,7 +2,12 @@
 
 ## Supported versions
 
-The latest 0.1.x source release is the initial supported series. No third-party audit or production security certification has been completed. Fixes will be reviewed and released by the maintainer; there is no guaranteed response time.
+| Version | Security status |
+| --- | --- |
+| 0.1.1 | Supported correction for the targeted CDN cache-header defect |
+| 0.1.0 | Affected by GHSA-mjww-fjrv-p72m; upgrade to the reviewed 0.1.1 source |
+
+See the [published advisory](https://github.com/tommybear416/http-privacy-guard/security/advisories/GHSA-mjww-fjrv-p72m) and [offline verification evidence](docs/VERIFICATION.md). Yitong Chen ([tommybear416](https://github.com/tommybear416)) owns security triage, correction and disclosure decisions. No third-party audit or production security certification has been completed. Maintenance occurs at the owner's instruction; there is no guaranteed response time.
 
 ## Report a vulnerability
 

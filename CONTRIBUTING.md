@@ -10,3 +10,6 @@ Use Node.js 22 or later. The project uses built-in Node tooling and has no packa
 Changes to the runtime, security policy or public-resource exceptions require maintainer review. Do not enable automatic merges. Preserve deny-by-default behavior and document API changes. Test runners and Dependabot proposals are evidence for review, not release approval.
 
 Before a release, the maintainer reviews the entire public file set, verifies tests and package contents, checks the MIT notice and declares the tested source commit. Pin downstream installations to that commit. There are no install hooks or registry publication credentials in CI. Publishing an npm package or deploying a downstream application is a separate action.
+
+
+For the published cache-header finding, see [VERIFICATION.md](docs/VERIFICATION.md). From a clean clone with the fixed before/after commits, `node scripts/build-advisory-evidence.mjs --output NEW_DIRECTORY` produces the offline verifier, source receipts and checksum-tested results. Both supported CI runtimes regenerate and validate this evidence. The checks do not establish independent reviewer acceptance or authorization to test someone else's deployment.
