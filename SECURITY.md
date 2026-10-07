@@ -6,7 +6,7 @@ The latest 0.1.x source release is the initial supported series. No third-party 
 
 ## Report a vulnerability
 
-Use GitHub's private **Report a vulnerability** control on this repository's Security tab once private vulnerability reporting is enabled. If that control is unavailable, do not post exploit details or affected private records in a public issue. A reporting channel must be established with [tommybear416](https://github.com/tommybear416) before sending those details.
+Private vulnerability reporting is enabled for this repository. Use GitHub's private **Report a vulnerability** control from the [Security tab](https://github.com/tommybear416/http-privacy-guard/security). If that control is unavailable, do not post exploit details or affected private records in a public issue. A reporting channel must be established with [tommybear416](https://github.com/tommybear416) before sending those details.
 
 Provide an affected source commit/version, a synthetic reproduction, expected and observed behavior, and the affected control. Do not send real health/legal records, session cookies, credentials, member identities, private application exports or signing evidence. Public issues are appropriate for non-sensitive documentation questions and feature requests.
 
