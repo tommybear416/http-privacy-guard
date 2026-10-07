@@ -1,0 +1,18 @@
+name: Non-sensitive bug report
+description: Report a problem using only synthetic inputs. Vulnerabilities follow SECURITY.md.
+body:
+  - type: markdown
+    attributes:
+      value: Do not include real member data, credentials or exploit details. Use the private security reporting channel for vulnerabilities.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Source commit and synthetic reproduction
+    validations:
+      required: true

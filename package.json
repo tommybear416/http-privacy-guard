@@ -1,0 +1,23 @@
+{
+  "name": "@tommybear416/http-privacy-guard",
+  "version": "0.1.0",
+  "description": "Defensive privacy boundaries for member portals and private document applications.",
+  "type": "module",
+  "license": "MIT",
+  "author": "tommybear416",
+  "engines": {"node": ">=22"},
+  "exports": {
+    ".": {"types": "./src/index.d.ts", "import": "./src/index.mjs"},
+    "./artifacts": {"types": "./src/artifacts.d.ts", "import": "./src/artifacts.mjs"}
+  },
+  "files": ["src/", "README.md", "SECURITY.md", "MAINTAINERS.md", "LICENSE", "docs/"],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-include='src/*.mjs' --test-coverage-lines=95 --test-coverage-branches=90 --test-coverage-functions=100 test/*.test.mjs",
+    "check:release": "node scripts/check-release.mjs",
+    "check": "npm test && npm run check:release"
+  },
+  "repository": {"type": "git", "url": "https://github.com/tommybear416/http-privacy-guard.git"},
+  "bugs": {"url": "https://github.com/tommybear416/http-privacy-guard/issues"},
+  "homepage": "https://github.com/tommybear416/http-privacy-guard#readme"
+}
